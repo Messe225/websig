@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include
+from django.conf import settings
+import django.contrib.auth.views
+import RestotelMap.views
 
 urlpatterns = [
+    path('',include('RestotelMap.urls')),
     path("admin/", admin.site.urls),
 ]
